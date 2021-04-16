@@ -23,14 +23,14 @@ public class ImportedProduct extends Product {
 	public final String priceTag() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(name + " $ ");
-		sb.append(price);
-		sb.append(" (" + "Customs fee: $ " + customsFee);
+		sb.append(String.format("%.2f", totalPrice()));
+		sb.append(" (" + "Customs fee: $ " + customsFee + ")");
 
 		return sb.toString();
 	}
 	
 	public Double totalPrice() {
-		return price + customsFee;
+		return price = price+customsFee;
 	}
 
 }
